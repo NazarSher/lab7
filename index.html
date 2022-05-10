@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lab7</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/jquery-ui-menu.css">
+  <link rel="stylesheet" href="css/jquery-ui-tab.css">
+  <link rel="stylesheet" href="css/jquery-ui-datepicker.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+
+<body>
+
+
+  <h1>Випадне меню</h1>
+
+
+    <ul id="menu">
+      <li class="ui-state-disabled"><div>Групи</div></li>
+      <li><div>КН-209</div></li>
+      <li><div>КН-210</div></li>
+      <li><div>КН-211</div>
+        <ul>
+          <li class="ui-state-disabled"><div>Студенти</div></li>
+          <li><div>Анастасин Ігор</div></li>
+          <li><div>Бабій Олександр</div></li>
+          <li><div>Базилевич Ярина</div></li>
+          <li><div>Біжик Ігор</div></li>
+          <li><div>Веремчук Михайло</div></li>
+        </ul>
+      </li>
+    </ul>
+
+     <h1>Організація вкладок на сторінці</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">HTML</a></li>
+        <li><a href="#tabs-2">CSS</a></li>
+        <li><a href="#tabs-3">JS</a></li>
+      </ul>
+      <div id="tabs-1">
+        <p>Cтандартизована мова розмітки документів для перегляду веб-сторінок у браузері. Веб-браузери отримують HTML документ від сервера за протоколами HTTP/HTTPS або відкривають з локального диска, далі інтерпретують код в інтерфейс, який відображатиметься на екрані монітора.</p>
+      </div>
+      <div id="tabs-2">
+        <p>Cпеціальна мова стилю сторінок, що використовується для опису їхнього зовнішнього вигляду. Самі ж сторінки написані мовами розмітки даних.</p>
+      </div>
+      <div id="tabs-3">
+        <p>Динамічна, об'єктно-орієнтована прототипна мова програмування. Реалізація стандарту ECMAScript. Найчастіше використовується для створення сценаріїв вебсторінок, що надає можливість на боці клієнта взаємодіяти з користувачем, керувати браузером, асинхронно обмінюватися даними з сервером, змінювати структуру та зовнішній вигляд вебсторінки.</p>
+      </div>
+    </div>
+
+  <h1>Вибір дати з календаря</h1>
+  <p>Date: <input type="text" id="datepicker"></p>
+
+  <h1>Карусель</h1>
+  <section class="container" id="OwlCarousel">
+
+			<div class="owl-carousel owl-theme">
+				<div class="item"><img src="images/1.png"></div>
+				<div class="item"><img src="images/2.jpg"></div>
+				<div class="item"><img src="images/3.jpg"></div>
+				<div class="item"><img src="images/4.jpg"></div>
+				<div class="item"><img src="images/5.jpg"></div>
+
+			</div>
+
+			<style>
+				.owl-carousel .item img {
+					height: 300px;
+				}
+			</style>
+		</section>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui-menu.js"></script>
+  <script>
+    $( function() {
+      $( "#menu" ).menu();
+    } );
+  </script>
+
+  <script src="js/jquery-ui-tab.js"></script>
+  <script>
+    $( function() {
+      $( "#tabs" ).tabs();
+    } );
+  </script>
+
+  <script src="js/jquery-ui-datepicker.js"></script>
+  <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+  </script>
+
+    <!--OwlCarousel-->
+
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.css">
+    <script src="owlcarousel/owl.carousel.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+          autoplay:true,
+          autoplayTimeout:1000,
+        margin:10,
+        nav:false,
+        autoWidth:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:false
+            },
+            600:{
+                items:2
+            },
+            900:{
+                items:3
+            },
+            1200:{
+                items:4
+            }
+        }
+      })
+    });
+    </script>
+
+
+</body>
+
+</html>
